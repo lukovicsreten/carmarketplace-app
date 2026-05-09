@@ -165,4 +165,14 @@ public class AdServiceImpl implements AdService {
             throw new org.springframework.security.access.AccessDeniedException("You can only modify your own resources");
         }
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<AdResponseDto> getCarsByPriceAndMileage(BigDecimal cenaMax, Integer kilometrazaMax) {
+        return adRepository.findAll().stream()
+                .filter(ad -> ad.getPrice().compareTo(cenaMax) <= 0)
+                .filter(ad -> ad.getCar() != null && ad.getCar().getMileage() != null && ad.getCar().getMileage() <= kilometrazaMax)
+                .map(adMapper::toResponseDto)
+                .toList();
+    }
 }

@@ -28,4 +28,12 @@ public interface AdService {
     AdResponseDto updateAd(Long id, AdRequestDto dto);
 
     void deleteAd(Long id);
+
+    /**
+     * Vraca sve automobile koji zadovoljavaju zadatu cenu i kilometrazu.
+     * @param cenaMax maksimalna cena (ukljucivo)
+     * @param kilometrazaMax maksimalna kilometraza (ukljucivo)
+     * @return lista odgovarajucih automobila
+     */
+    List<AdResponseDto> getCarsByPriceAndMileage(BigDecimal cenaMax, Integer kilometrazaMax);
 }
