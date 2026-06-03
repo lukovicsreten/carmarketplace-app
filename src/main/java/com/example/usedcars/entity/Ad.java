@@ -25,7 +25,7 @@ public class Ad {
     @Column(name = "title", nullable = false, length = 150)
     private String title;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(name = "description", length = 5000)
     private String description;
 
     @Column(name = "price", nullable = false, precision = 12, scale = 2)

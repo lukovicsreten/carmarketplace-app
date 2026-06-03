@@ -19,10 +19,10 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "content", nullable = false, length = 5000)
     private String content;
 
-    @Column(name = "text", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "text", nullable = false, length = 5000)
     private String text;
 
     @Column(name = "date_posted", nullable = false)
