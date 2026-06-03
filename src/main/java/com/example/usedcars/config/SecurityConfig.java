@@ -59,8 +59,8 @@ public class SecurityConfig {
                 "http://localhost:5173",
                 "http://localhost:3000",
                 "http://localhost:4173",
-                "https://car-spectrum-main.vercel.app"
-                // Dodajte vašu Netlify/custom URL ovde ako deploy-ujete frontend drugde
+                "https://car-spectrum-main.vercel.app",
+                "https://gilded-malabi-564e1a.netlify.app"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
